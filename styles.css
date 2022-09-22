@@ -1,7 +1,32 @@
 body {
   font-family: Helvetica;
 }
-ui {
+ul {
   list-style-image: url('koala-icon.png');
   margin-left: 1.5em;
+}
+li {
+  padding: 0.1em;
+}
+
+body {
+  font-family: Helvetica;
+  margin: auto;
+  width: 40%;
+  background-color: whitesmoke;
+}
+div {
+  background-color: #ccffcc;
+  padding: 1em;
+  border-style: groove;
+}
+
+.koalafacts {
+  background-color: #CCFFCC;
+  padding: 1em;
+  border-style: groove;
+  margin-top: 1em;
+}
+.mainContent {
+  margin-top: 25%;
 }
