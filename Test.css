@@ -1,0 +1,12 @@
+/* Multiline
+ comment */
+h1 {
+  color: red;
+  background-color: blue;
+}
+div {
+  height: 300px;
+  width: 350px;
+  background-color: lightgray;
+  color: darkblue;
+}
