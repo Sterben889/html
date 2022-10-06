@@ -1,6 +1,7 @@
-::after, ::before {
+*, ::after, ::before {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.25rem;
 }
 
 h1 {
@@ -13,10 +14,12 @@ h1 {
   font: sans-serif;
   background-color: black;
   padding: 1em;
+  font-size: 50%;
 }
 body, html {
   height: 100%;
   margin: 0;
+  background-color: #f2f1ed;
   color: #de4848;
 }
 
@@ -33,8 +36,13 @@ body, html {
 }
 
 .timer{
+  position: absolute;
+  top: 25%;
+  left: 50%;
   display: inline-flex;
   flex-direction: column;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+  border-radius: .1em;
 }
 .top, .bottom {
   height: .75em;
@@ -44,14 +52,15 @@ body, html {
 }
 .top {
   background-color: #f7f7f7;
-  border-top-right-radius: .5em;
-  border-top-left-radius: .5em;
+  border-top-right-radius: .1em;
+  border-top-left-radius: .1em;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
 
 .bottom{
   background-color: white;
   display: flex;
   align-items: flex-end;
-  border-bottom-right-radius: .5em;
-  border-bottom-left-radius: .5em;
+  border-bottom-right-radius: .1em;
+  border-bottom-left-radius: .1em;
 }
