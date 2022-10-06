@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Temperature Converter</title>
+</head>
+<body>
+
+<h1>Temperature Converter</h1>
+
+<form>
+	<label for="temperature">Temperature:</label><br>
+	<input type="number" id="temperature" name="temperature"><br>
+
+	<select name="tmptype" id="tmptype">
+		<option value="celcius">Celcius</option>
+		<option value="fahrenheit">Fahrenheit</option>
+		<option value="kelvin">Kelvin</option>
+	</select>
+
+	<input type="button" id="convert" value="Convert">
+
+	<div id="resultbox">
+		Result:
+		<output name="result" id="result"></output>
+	</div>
+
+</form>
+
+<script>
+document.getElementById("convert").addEventListener('click', function() {
+	let temperature_input = document.getElementById("temperature");
+	let tmp_input = document.getElementById("tmptype");
+	let result_output = document.getElementById("result");
+
+
+	if (!temperature_input.value){
+		alert("Blank Input");
+	}
+
+	if (tmp_input.value == 'celcius') {
+		let fahrenheit = temperature_input.value * 1.8 + 32;
+		result_output.innerText = fahrenheit + " F";
+	} else if (tmp_input.value == 'fahrenheit') {
+		let celsius = (temperature_input.value - 32) / 1.8;
+		result_output.innerText = celsius + " C";
+	}
+	else if (tmp_input.value == 'kelvin') {
+		let kelvin = (temperature_input.value *1) + 273.15;
+		result_output.innerText = kelvin + " K";
+	}
+
+});
+</script>
+
+</body>
+</html>
