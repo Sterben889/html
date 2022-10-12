@@ -47,15 +47,15 @@ body, html {
 
 .top,
 .bottom,
-.timer.flip::after,
-.timer.flip::before{
+.timer .top-flip,
+.timer .bottom-flip{
   height: .75em;
   line-height: 1;
   padding: .25em;
   overflow: hidden;
 }
 .top,
-.timer.flip::before {
+.timer .top-flip {
   background-color: #f7f7f7;
   border-top-right-radius: .1em;
   border-top-left-radius: .1em;
@@ -67,7 +67,7 @@ body, html {
 }
 
 .bottom,
-.timer.flip::after{
+.timer .bottom-flip{
   background-color: white;
   display: flex;
   align-items: flex-end;
@@ -75,9 +75,9 @@ body, html {
   border-bottom-left-radius: .1em;
 }
 
-.timer.flip::before{
+.timer .top-flip{
   position: absolute;
-  content: "5";
+  content: attr(data-current-number);
   width: 100%;
   animation: flip-top 250ms ease-in;
   transform-origin: bottom;
@@ -88,10 +88,10 @@ body, html {
     transform: rotateX(90deg);
   }
 }
-.timer.flip::after{
+.timer .bottom-flip{
   position: absolute;
   bottom: 0;
-  content: "6";
+  content: attr(data-next-number);
   width: 100%;
   animation: flip-down 250ms ease-out 250ms;
   transform-origin: top;
