@@ -1,31 +1,59 @@
-const flipCard = document.querySelector(".timer")
-flip(flipCard)
+const endDate = new Date("October 13, 2022 UTC-6")
+let previousTimeBetweenDates
+setInterval(() => {
+  const currentDate = new Date()
+  const timeBetweenDates = Math.ceil((endDate - currentDate + currentDate.getTimezoneOffset()) / 1000)
+  if (previousTimeBetweenDates !== timeBetweenDates) {
+    flipAllCards(timeBetweenDates)
+  }
 
-function flip(flipCard) {
+  previousTimeBetweenDates = timeBetweenDates
+}, 250)
+
+function flipAllCards(time) {
+  const seconds = time % 60
+  const minutes = Math.floor(time / 60) % 60
+  const hours = Math.floor(time / 3600) % 24
+  let days = Math.floor(time / 86400)
+  console.log(days)
+
+ flip(document.querySelector("[data-days-hundreds]"), Math.floor(days / 100))
+ flip(document.querySelector("[data-days-tens]"), Math.floor(days / 10 % 10))
+ flip(document.querySelector("[data-days-ones]"), days % 10)
+ flip(document.querySelector("[data-hours-tens]"), Math.floor(hours / 10))
+ flip(document.querySelector("[data-hours-ones]"), hours % 10)
+ flip(document.querySelector("[data-minutes-tens]"), Math.floor(minutes / 10))
+ flip(document.querySelector("[data-minutes-ones]"), minutes % 10)
+ flip(document.querySelector("[data-seconds-tens]"), Math.floor(seconds / 10))
+ flip(document.querySelector("[data-seconds-ones]"), seconds % 10)
+}
+
+function flip(flipCard, newNumber) {
   const tophalf = flipCard.querySelector(".top")
+  const startNumber = parseInt(tophalf.textContent)
+  if (newNumber === startNumber) return
+
   const bottomhalf = flipCard.querySelector(".bottom")
   const topFlip = document.createElement("div")
   topFlip.classList.add("top-flip")
   const bottomFlip = document.createElement("div")
   bottomFlip.classList.add("bottom-flip")
-  const startNumber = parseInt(tophalf.textContent)
 
   tophalf.textContent = startNumber
   bottomhalf.textContent = startNumber
   topFlip.textContent = startNumber
-  bottomFlip.textContent = startNumber - 1
+  bottomFlip.textContent = newNumber
 
 
   topFlip.addEventListener("animationstart", e => {
-    tophalf.textContent = startNumber - 1
+    tophalf.textContent = newNumber
   })
   topFlip.addEventListener("animationend", e => {
     topFlip.remove()
   })
   bottomFlip.addEventListener("animationend", e => {
-    bottomhalf.textContent = startNumber - 1
+    bottomhalf.textContent = newNumber
     bottomFlip.remove()
-    flip(flipCard)
   })
   flipCard.append(topFlip, bottomFlip)
 }
