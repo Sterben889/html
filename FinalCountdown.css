@@ -4,7 +4,7 @@
   font-size: 2.25rem;
 }
 .shadow {
-  color: #f7bbc7;
+  /*color: #f7bbc7;*/
   position: absolute;
   text-align: center;
   top: 27px;
@@ -14,6 +14,9 @@
   font-family: YakuHanJPs_Noto, "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   padding: 1em;
   font-size: 75%;
+
+  color: white;
+  text-shadow: -1px -1px 0 #f7bbc7, 1px -1px 0 #f7bbc7, -1px 1px 0 #f7bbc7, 1px 1px 0 #f7bbc7;
 }
 h1 {
   color: black;
@@ -46,8 +49,18 @@ body, html {
   top: 10%;
   left: 5%;
   width: 90%;
-  height: 100%;
+  height: 90%;
   background-color: #e7274c;
+}
+
+.panik {
+  background-image: url("chika-fujiwara-kaguya-sama.gif");
+  /* Full height */
+  height: 50%;
+  position: relative;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .timer{
@@ -126,7 +139,7 @@ body, html {
 }
 
 .container-segment{
-  color: black;
+  color: #de4848;
   display: flex;
   flex-direction: column;
   gap: .1em;
@@ -139,5 +152,6 @@ body, html {
 }
 
 .segment-title {
+  color: black;
   font-size: 1rem;
 }
