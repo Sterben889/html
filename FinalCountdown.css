@@ -3,18 +3,28 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2.25rem;
 }
+.shadow {
+  color: #f7bbc7;
+  position: absolute;
+  text-align: center;
+  top: 27px;
+  left: 50%;
 
+  transform: translate(-50%, -50%);
+  font-family: YakuHanJPs_Noto, "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  padding: 1em;
+  font-size: 75%;
+}
 h1 {
-  color: goldenrod;
+  color: black;
   text-align: center;
   position: absolute;
-  top: 10%;
+  top: 40px;
   left: 50%;
   transform: translate(-50%, -50%);
-  font: sans-serif;
-  background-color: black;
+  font-family: YakuHanJPs_Noto, "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   padding: 1em;
-  font-size: 50%;
+  font-size: 70%;
 }
 body, html {
   height: 100%;
@@ -23,22 +33,26 @@ body, html {
   color: #de4848;
 }
 
-.bg {
-  /* The image used */
-  background-image: url("chika-fujiwara-kaguya-sama.gif");
-  /* Full height */
+.main-bg{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #ffffff;
+}
+.bg {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 90%;
+  height: 100%;
+  background-color: #e7274c;
 }
 
 .timer{
+
   position: relative;
-  top: 25%;
-  left: 50%;
   display: inline-flex;
   flex-direction: column;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
@@ -102,4 +116,28 @@ body, html {
   100%{
     transform: rotateX(0deg);
   }
+}
+
+.container {
+  padding-top: 5%;
+  display: flex;
+  gap: .5em;
+  justify-content: center;
+}
+
+.container-segment{
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: .1em;
+  align-items: center;
+}
+
+.segment {
+  display: flex;
+  gap: .1em;
+}
+
+.segment-title {
+  font-size: 1rem;
 }
