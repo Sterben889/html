@@ -3,6 +3,14 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2.25rem;
 }
+.text {
+  text-align: center;
+  font-family: YakuHanJPs_Noto, "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  color: black;
+  font-size: 30%;
+  visibility: hidden;
+}
+
 .shadow {
   /*color: #f7bbc7;*/
   position: absolute;

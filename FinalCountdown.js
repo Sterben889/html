@@ -1,4 +1,4 @@
-const endDate = new Date("December 8, 2022 UTC-6")
+const endDate = new Date("October 15, 2022 21:10")
 let previousTimeBetweenDates
 setInterval(() => {
   const currentDate = new Date()
@@ -13,6 +13,8 @@ setInterval(() => {
 function flipAllCards(time) {
   var audio = new Audio('FinalCountdown.mp3#t=00:01:58');
   if (time == 0) {
+   document.getElementById('a').style.backgroundImage="url('chikapanik.gif')";
+   document.getElementById('b').style.visibility = 'visible';
    audio.addEventListener("canplaythrough", () => {
    audio.play().catch(e => {
       window.addEventListener('click', () => {
