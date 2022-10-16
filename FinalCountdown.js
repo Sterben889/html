@@ -10,11 +10,18 @@ setInterval(() => {
   previousTimeBetweenDates = timeBetweenDates
 }, 250)
 
+/*
+The function calculates the hundredths to ones of the input and
+display then individually on each card
+time: time calculated in seconds
+*/
 function flipAllCards(time) {
   var audio = new Audio('FinalCountdown.mp3#t=00:01:58');
+  // What happens when timer hits 0
   if (time == 0) {
-   document.getElementById('a').style.backgroundImage="url('chikapanik.gif')";
-   document.getElementById('b').style.visibility = 'visible';
+   document.getElementById('a').style.backgroundImage="url('chikapanik.gif')"; // change image
+   document.getElementById('b').style.visibility = 'visible'; // show a hidden div saying "click me"
+   // play audio on click
    audio.addEventListener("canplaythrough", () => {
    audio.play().catch(e => {
       window.addEventListener('click', () => {
@@ -23,7 +30,7 @@ function flipAllCards(time) {
    })
 });
   }
-  if (time < 0) return
+  if (time < 0) return // stop timer from counting to negatives
   const seconds = time % 60
   const minutes = Math.floor(time / 60) % 60
   const hours = Math.floor(time / 3600) % 24
@@ -42,7 +49,9 @@ function flipAllCards(time) {
 }
 
 
-
+/*
+The function is for animating the flipping of cards
+*/
 function flip(flipCard, newNumber) {
   const tophalf = flipCard.querySelector(".top")
   const startNumber = parseInt(tophalf.textContent)

@@ -3,6 +3,7 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2.25rem;
 }
+/* click me div to be shown later */
 .text {
   text-align: center;
   font-family: YakuHanJPs_Noto, "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
@@ -12,7 +13,6 @@
 }
 
 .shadow {
-  /*color: #f7bbc7;*/
   position: absolute;
   text-align: center;
   top: 27px;
@@ -64,10 +64,8 @@ body, html {
 
 .panik {
   background-image: url("chika-fujiwara-kaguya-sama.gif");
-  /* Full height */
   height: 50%;
   position: relative;
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
 }
